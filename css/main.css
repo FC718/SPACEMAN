@@ -47,15 +47,19 @@ img {
     display: flex;
     max-width: 350px;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 3px;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
 }
 
-@media only screen and (min-width: 768px) {
+/* @media only screen and (min-width: 768px) {
    body {
     grid-template-columns: 1fr,4fr;
     grid-template-rows: 50px auto 30px ;
 }
+} */
+
+#p-guessword {
+    background-color: blue;
 }

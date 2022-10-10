@@ -1,77 +1,70 @@
-// This is my const area. I created an array of the letters I will be using for the game
-// let alphabet =  ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-
 // --------CONTSTANTS-----------
-const winningWords = ["Pluto", "Venus", "Mars"]
+const winningWords = ["Pluto", "Venus", "Mars", "Across the Universe", "Galaxy"]
+const numberOfGuesses = 6;
 
-
+// Identify and Initialize 
 //  -------STATE VARIABLES -------
-// Create two different data structures two hold two types of informatiom
-// Right: Create an array of strings with letters 
-Wrong: 
-    
-// // Right would be the score. Where are you at so far with choosing the correct letters
-// Right -> { P: P','L','U','T','O', 'V','E','N','U','S''M','A','R','S'
-    
-// // or an array
-     
-//     ['P','L','U','T','O'] ['V','E','N','U','S'] ['M','A','R','S']
-// }
+let secretWord; // Object key of 'P' -> For the players correct answers
+let wrongLetters; // Object key of 'P' -> For the players wrong answers
+let winner; // String 'p" if player wins. 'l' for lose.
+let guessWord; 
 
-// //  Wrong -> { P: The section of letters that arent correct. From the letters Board
+// --------STORED/CACHED ELEMENTS-------
+  const letterEls = document.querySelectorAll('#letters > button') 
+  console.log(letterEls)
 
-//  }
-
-let right; // Object key of 'p' -> Player; 
-let wrong  // (results); // Object key of 'p' -> Values of the correct letters in the index array. 
-// let winner; 
-
-// --------CACHED ELEMENTS-------
+  const pGuessWord = document.getElementById('p-guessword')
+  console.log(pGuessWord)
 
 
+// --- EVENT LISTENERS ----
+document.querySelector('#letters')
+.addEventListener('click', handleChoice)
 
 
-
-// EVENT LISTENER
-const element = document.getElementById("a");
-element.addEventListener("click", myFunction);
-
-function myFunction() {
-  document.getElementById("letters").innerHTML = "Hello World";
-}
-
-
-
+// Coding our Render Functions
 // -------Functions---------
-init();
-
-// Initialize all state then call render();
-function init(); {
-    
-    
-    right = {
-
-    };
-
-    wrong = {
-
-    };
-
-    winner = {
-        
-    };
-    render();
-
-}
-
-function renderRight() {
-    for (let key in right) {
-     const rightEl = document.getElementById();
-    }
-}
-
+init()
 // Initialize all state, then call render();
+function init() {
+  secretWord = winningWords[Math.floor(Math.random() * winningWords.length )]
+  console.log(secretWord)
+  
+  wrongLetters = []
+  
+  //  Created a guess word. For dashes to be shown on the DOM
+  guessWord = '';
+  
+  for(let letter of secretWord ) {
+    guessWord = guessWord + (letter === ' ' ? ' ' : '_ ')
+  }
+  
+  console.log(guessWord)
+  winner = '';
+  render();
+}
 
+// We are currently rendering whats above down below.
+  function handleChoice(evt) {
+    console.log(evt.target.id)
+    if (secretWord.includes(evt.target.id)) {
+      let newGuessWord = ' ' 
+      for (let i = 0; i < secretWord.length ; i++) {
+    // 
+      }
+    }
+
+  }  
+
+
+function render() {
+  // renderSecretWord();
+  console.log('hello');
+  // renderwrongAnswer();
+  pGuessWord.textContent = guessWord
+  
+}
+  
 
 
 
