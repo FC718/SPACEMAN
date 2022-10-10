@@ -18,6 +18,7 @@ let guessWord;
 
 
 // --- EVENT LISTENERS ----
+// This is a click event handler for when the user clicks on the letter buttons.
 document.querySelector('#letters')
 .addEventListener('click', handleChoice)
 
@@ -36,23 +37,35 @@ function init() {
   guessWord = '';
   
   for(let letter of secretWord ) {
-    guessWord = guessWord + (letter === ' ' ? ' ' : '_ ')
+    guessWord = guessWord + (letter === ' ' ? ' ' : '_')
   }
   
-  console.log(guessWord)
   winner = '';
   render();
 }
 
-// We are currently rendering whats above down below.
   function handleChoice(evt) {
+    const letter = evt.target.id
     console.log(evt.target.id)
-    if (secretWord.includes(evt.target.id)) {
-      let newGuessWord = ' ' 
+    if (secretWord.toLowerCase().includes(letter)) {
+      let newGuessWord = '' 
+      
+
       for (let i = 0; i < secretWord.length ; i++) {
-    // 
+        if (secretWord.toLowerCase().charAt(i) === letter) {
+          
+          newGuessWord = newGuessWord + letter 
+        } 
+        else {
+          newGuessWord = newGuessWord + guessWord.charAt(i)
+        }
+        
       }
+      guessWord = newGuessWord
+      console.log(newGuessWord)
+
     }
+    render()
 
   }  
 
