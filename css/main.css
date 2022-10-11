@@ -5,14 +5,15 @@
 button hover {
 background-color: black;
 color: white;
+
 } 
 
 body {
     display: flex;
      flex-direction: column;
      justify-content: center;
-    align-items: center;  
-    /* background-image: url("https://i.imgur.com/0FVqQGd.png"); */
+    align-items: center; 
+    background-image: url("https://i.imgur.com/0FVqQGd.png");
     background-size: cover;
 }
 
@@ -24,13 +25,15 @@ img {
 }
 
 #rocket {
-    display: flex;   
-    /* flex-direction: */
-    align-items: flex-end;
+     display: flex;   
+     flex-direction: 
+     align-items flex-end;
     justify-content: flex-end;
     margin-right: auto;
     height: 30%;
-    width: 30%;
+    width: 30%; 
+
+
 }
 
 #astronaut {
@@ -53,13 +56,20 @@ img {
     margin: 0 auto;
 }
 
-/* @media only screen and (min-width: 768px) {
+ @media only screen and (min-width: 768px) {
    body {
     grid-template-columns: 1fr,4fr;
     grid-template-rows: 50px auto 30px ;
+    }
 }
-} */
-
 #p-guessword {
-    background-color: blue;
+    /* background-color: blue; */
 }
+
+div {
+    border: 1px red;
+}
+/* 
+h1 {
+    background-image: url("https://static.vecteezy.com/system/resources/previews/002/013/889/non_2x/criminal-astronaut-design-illustration-free-vector.jpg");
+} */
