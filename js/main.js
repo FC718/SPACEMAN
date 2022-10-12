@@ -1,6 +1,16 @@
 // --------CONTSTANTS-----------
 const winningWords = ["Pluto", "Venus", "Mars", "Across the Universe", "Galaxy"]
 const numberOfGuesses = 6;
+const IMAGES = [ 
+  "imgs/spaceman-images/spaceman-0.jpg",
+  "imgs/spaceman-images/spaceman-1.jpg",
+  "imgs/spaceman-images/spaceman-2.jpg",
+  "imgs/spaceman-images/spaceman-3.jpg",
+  "imgs/spaceman-images/spaceman-4.jpg",
+  "imgs/spaceman-images/spaceman-5.jpg",
+  "imgs/spaceman-images/spaceman-6.jpg",
+]
+
 
 // Identify and Initialize 
 //  -------STATE VARIABLES -------
@@ -22,20 +32,19 @@ let guessWord;
 
   const homeButton = document.getElementsByClassName('homeBtn')
   
+// selecting images
+const imgEl = document.querySelectorAll('')
+
+  
 
 
-
-
-  // attatchig query selector to the section
+  // attatching query selector to the section
 // --- EVENT LISTENERS ----
 // This is a click event handler for when the user clicks on the letter buttons.
 document.querySelector('#letters')
 .addEventListener('click', handleChoice)
 // document.getElementsByClassName('#homebtn', handleNewWord)
 // homeButton.addEventListener('click', takeMeHome)
-
-
-
 
 
 // Coding our Render Functions
@@ -63,6 +72,8 @@ function init() {
   render();
 }
 
+
+  // I have my handles. Where I win or lose.
   function handleChoice(evt) {
     const letter = evt.target.id
     console.log(evt.target.id)
@@ -101,13 +112,22 @@ function init() {
       
 
 
-function render() {
-  // renderSecretWord();
-  // console.log('hello');
-  // renderwrongAnswer();
-  pGuessWord.textContent = guessWord
+      function renderButton() {
+        letterButton.forEach(function(btn) {
+          const ltr = btn.textContent;
+          // if wrongGuesses includes our letter add class name of wrong 
+        }
   
-}
+
+      
+
+
+// function render() {
+//   // renderSecretWord();
+//   // console.log('hello');
+//   // renderwrongAnswer();
+//   pGuessWord.textContent = guessWord;
+// }
   
 
 
@@ -118,4 +138,4 @@ function render() {
 
 
 
-// -----INVOKE MAIN RENDER ------
+// -----INVOKE MAIN RENDER -----
