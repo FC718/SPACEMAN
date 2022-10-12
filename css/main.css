@@ -6,6 +6,7 @@ button hover {
 background-color: black;
 color: white;
 
+
 } 
 
 body {
@@ -69,7 +70,18 @@ img {
 div {
     border: 1px red;
 }
-/* 
+
+
 h1 {
-    background-image: url("https://static.vecteezy.com/system/resources/previews/002/013/889/non_2x/criminal-astronaut-design-illustration-free-vector.jpg");
-} */
+    color: rgb(128, 128, 128);
+    font-family: 'Open Sans', sans-serif;
+
+} 
+
+.wrong {
+    background-color: red;
+}
+
+.correct {
+    background-color: green;
+}
