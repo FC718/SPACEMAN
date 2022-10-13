@@ -1,4 +1,3 @@
-  // --------CONTSTANTS-----------
   const winningWords = ["pluto", "venus", "mars", "across the universe", "galaxy"]
   const maxWrong = 6;
   const IMAGES = [ 
@@ -11,21 +10,13 @@
     "imgs/spaceman-images/spaceman-6.jpg",
   ]
 
-
-  // Identify and Initialize 
-  //  -------STATE VARIABLES -------
-  let secretWord; // Object key of 'P' -> For the players correct answers
-  let wrongLetters; // Object key of 'P' -> For the players wrong answers
-  let winner; // String 'p" if player wins. 'l' for lose.
+  let secretWord; 
+  let wrongLetters;
+  let winner; 
   let guessWord; 
-  let gameStatus; // game status will = 'W' for a Win and 'L' for a loss. and null for plain.
+  let gameStatus; 
 
 
-  // selecting HTML
-  // --------STORED/CACHED ELEMENTS-------
-
-  // getting all of the section elements and the children VVVV
-  // ... the dots are called a spreaad operator. It selects everything in the array
   const letterEls = [...document.querySelectorAll('#section > button')] 
     console.log(letterEls)
 
@@ -35,36 +26,19 @@
   const homeButton = document.getElementById('homebtn')
   const msgEl = document.getElementById('p-message')
   console.log(msgEl)
-  // selecting images
   const imgEl = document.querySelector('img')
 
     
-
-
-    // attatching query selector to the section
-  // --- EVENT LISTENERS ----
-  // This is a click event handler for when the user clicks on the letter buttons.
   document.querySelector('section')
   .addEventListener('click', handleChoice)
   homeButton.addEventListener('click', init)
-  // document.getElementsByClassName('#homebtn', handleNewWord)
-  // homeButton.addEventListener('click', takeMeHome)
 
-
-  // Coding our Render Functions
-  // -------Functions---------
   init();  
-  // Initialize all state, then call render();
-
   function init() {
-    // array of the wrong words
     wrongLetters = [];
-    // this is just created the random word for you to guess.
     const maxIdx = Math.floor(Math.random() * winningWords.length )
     console.log(maxIdx) 
-    //this array is being done by .split which is seperating the words ['G','A',]
     secretWord = winningWords[maxIdx].toUpperCase('').split('')
-    // if we have an empty letter leave it alone, if it has a letter it is being replated by an undersore.
     guessWord = secretWord.map(ltr => ltr === ' ' ? ' ' : '_' ) 
     gameStatus = null
     render();
@@ -80,7 +54,7 @@
   function renderMessage() {
 
     if(gameStatus === 'W') {
-      msgEl.textContent = 'Winner,Winner, Chicken Dinner';
+      msgEl.textContent = 'WINNER WINNER, OUT OF SPACE DINNER';
       
     } else if (gameStatus === 'L') {
       msgEl.innerText = `Youre out in space! The answer was ${secretWord.join('')}` 
