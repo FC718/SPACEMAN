@@ -3,7 +3,8 @@ The general aim is for players to find a mystery word (represented by dashes) by
 
 # Screenshot
 
-<img src="https://imgur.com/a/IR3S01T">
+
+![Imgur](https://i.imgur.com/3DldMJ5.png)
 
 
 # Technologies Used
