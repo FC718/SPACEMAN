@@ -18,14 +18,9 @@
 
 
   const letterEls = [...document.querySelectorAll('#section > button')] 
-    console.log(letterEls)
-
   const pGuessWord = document.getElementById('p-guessword')
-    console.log(pGuessWord)
-
   const homeButton = document.getElementById('homebtn')
   const msgEl = document.getElementById('p-message')
-  console.log(msgEl)
   const imgEl = document.querySelector('img')
 
     
@@ -37,7 +32,6 @@
   function init() {
     wrongLetters = [];
     const maxIdx = Math.floor(Math.random() * winningWords.length )
-    console.log(maxIdx) 
     secretWord = winningWords[maxIdx].toUpperCase('').split('')
     guessWord = secretWord.map(ltr => ltr === ' ' ? ' ' : '_' ) 
     gameStatus = null
@@ -66,7 +60,6 @@
   function renderButton() {
         letterEls.forEach (function(btn) {
           const ltr = btn.textContent;
-          console.log(ltr)
           if (wrongLetters.includes(ltr)) {
             btn.className = 'wrong'
           } else if (guessWord.includes(ltr)) { 
@@ -80,7 +73,6 @@
 
   function handleChoice(evt) {
       const letter = evt.target.textContent
-      console.log(evt.target.textContent)
       if (secretWord.includes(letter)) {
         secretWord.forEach(function(char, idx) {
           if (char === letter) guessWord[idx] = letter;

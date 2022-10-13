@@ -15,11 +15,10 @@
         background-image: url("https://i.imgur.com/D42or.jpeg");
     }
 
-    img {
+    /* img {
         height: 30%;
         width: 30%; 
-        /* align-self: flex-start */
-    }
+    } */
 
     #rocket {
         display: flex;   
